@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/style.css" class="css" />
+    <title>Weather Land-page</title>
+    <script
+      src="https://kit.fontawesome.com/af5476175e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700;800&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Merriweather+Sans:wght@300;400;600;700;800&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <!--Start of the content-->
+  <body>
+    <!--Main Container (Bootstrap) for input + buttons-->
+    <form id="user-input">
+      <div class="container row-margin">
+        <div class="row content gy-4 justify-content-center row-margin">
+          <div class="col-sm-5">
+            <div class="input-group">
+              <!--Enter City-->
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter City"
+                aria-label="Enter City"
+                aria-describedby="basic-addon2"
+                id="enter-city"
+              />
+              <!--Search side buttons (location)-->
+              <div class="input-group-append">
+                <button
+                  class="btn btn-lg btn-outline-light btn-search"
+                  type="button"
+                  id="search-input"
+                >
+                  <i class="fas fa-search-location location"></i>
+                </button>
+              </div>
+              <!--Main / actual location-->
+              <div class="col-sm">
+                <button
+                  class="btn btn-lg btn-outline-light actual-location"
+                  type="button"
+                  id="actual-location"
+                >
+                  <i class="fas fa-street-view local"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!--Main Information-->
+    <div class="container-fluid width-main-container move-content-up">
+      <div class="row g-2 changing-position-details">
+        <!--Date-->
+        <div class="col-8">
+          <div class="col-8">
+            <div class="text-center p-2 today-date">
+              <h3 class="today-date" id="date">SUNDAY 9:00 PM</h3>
+            </div>
+          </div>
+        </div>
+        <!--Temperature-->
+        <div class="col-6">
+          <div class="changing-position">
+            <div class="p-6 text-center">
+              <h1 class="temperature-number" id="temperature-grade">33&degC</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-6"></div>
+        <!--Temperature Details-->
+        <div class="col-6">
+          <div class="changing-position">
+            <div class="text-center details-temp">
+              <p>
+                <i class="fas fa-tint detail-icon" id="humid-icon"></i
+                ><span id="humidity"> 56% </span>
+                <i class="fas fa-wind detail-icon" id="wind-icon"></i>
+                <span id="wind">16 km/h</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--Buttons celsius and fahrenheit-->
+        <div class="col-6"></div>
+        <div class="col-6">
+          <div class="p-3 text-center">
+            <button
+              class="btn btn-lg btn-outline-light celsius-fahrenheit"
+              type="button"
+              id="celcius"
+            >
+              &degC
+            </button>
+            <button
+              class="btn btn-lg btn-outline-light celsius-fahrenheit"
+              type="button"
+              id="fahrenheit"
+            >
+              &degF
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--City-->
+      <div class="row rotation-right move-city-up g-2">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <div class="text-center">
+            <h1 class="tittle-city" id="show-city">TOKYO</h1>
+          </div>
+          <div class="col-3"></div>
+          <div class="col-9 text-center">
+            <i class="fas fa-cloud-sun weather-main-icon"></i>
+          </div>
+          <!--Space for description-->
+          <div class="col-3"></div>
+          <div class="col-9">
+            <!--Weather Description-->
+            <div class="p-3 text-center rotate-text description-text">
+              <h4 class="description" id="description-weather">
+                Partly Cloudy
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Next 5 days-->
+    <div class="container-fluid position-next-days">
+      <div class="row g-2">
+        <div class="col-4">
+          <div class="p-3 text-center next-days-edit color-monday">
+            <h5 class="card-title">Mon</h5>
+            <i class="fas fa-cloud-sun icon icon-days"></i>
+            <p class="card-text">34&deg 25&deg</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-3 text-center next-days-edit color-tuesday">
+            <h5 class="card-title">Tue</h5>
+            <i class="fas fa-cloud-sun icon icon-days"></i>
+            <p class="card-text">34&deg 25&deg</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-3 text-center next-days-edit color-wed">
+            <h5 class="card-title">Wed</h5>
+            <i class="fas fa-cloud-sun icon icon-days"></i>
+            <p class="card-text">34&deg 25&deg</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-3 text-center next-days-edit color-thu">
+            <h5 class="card-title">Thu</h5>
+            <i class="fas fa-cloud-sun icon icon-days"></i>
+            <p class="card-text">34&deg 25&deg</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-3 text-center next-days-edit color-fri">
+            <h5 class="card-title">Fri</h5>
+            <i class="fas fa-cloud-sun icon icon-days"></i>
+            <p class="card-text">34&deg 25&deg</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-3 text-center next-days-edit color-sat">
+            <h5 class="card-title">Sat</h5>
+            <i class="fas fa-cloud-sun icon icon-days"></i>
+            <p class="card-text">34&deg 25&deg</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Created by Mili 2021-->
+    <div class="container">
+      <div class="row">
+        <div class="col text-center container-creator">
+          <p class="created-by">
+            <a
+              href="https://github.com/milicodes/weather-app.git"
+              target="_blank"
+              class="created-by"
+              >Open-source code</a
+            >
+            by
+            <a
+              href="https://www.instagram.com/mili.codes/"
+              target="_blank"
+              class="created-by"
+            >
+              Mili</a
+            >
+            ☁ 2021
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--Javascript Doc-->
+    <script src="js/javascript.jsx"></script>
+  </body>
+</html>

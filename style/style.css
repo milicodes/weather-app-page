@@ -1,0 +1,332 @@
+span {
+  margin: 2rem;
+  color: #faffff;
+  font-family: "Fredoka One", cursive;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: #faffff;
+  transition: all 200ms ease-in-out;
+}
+
+body {
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    #3a7bd5,
+    #00d2ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    #3a7bd5,
+    #00d2ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  zoom: 75%;
+}
+div.row-margin {
+  position: relative;
+  top: 2rem;
+  left: 2rem;
+  margin-bottom: 2rem;
+}
+
+button.btn-search {
+  border-radius: 0 10px 10px 0;
+}
+
+button.actual-location {
+  position: relative;
+  left: 1rem;
+  border-radius: 30px;
+}
+
+button.music {
+  position: relative;
+  margin-left: 5rem;
+  border-radius: 30px;
+}
+
+div.temp-up {
+  position: relative;
+  top: -4rem;
+}
+
+div.details-temp {
+  font-size: 35px;
+}
+
+div.date-down {
+  position: relative;
+  top: 4rem;
+}
+
+div.city-down {
+  position: relative;
+  top: 9rem;
+}
+
+div.move-content-up {
+  position: relative;
+  top: 6rem;
+}
+
+div.move-city-up {
+  position: relative;
+  top: -26rem;
+}
+
+h1.tittle-city {
+  display: inline-block;
+  position: relative;
+  border-radius: 20px;
+  text-transform: uppercase;
+  padding: 2rem;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 50px;
+  color: #a1ccf4;
+  background-color: #faffff;
+  box-shadow: 1px 1px 0 1px #f9f9fb, 5px 0 4px 0 rgb(34 33 81 / 20%),
+    18px -12px 0px rgb(157, 205, 250);
+}
+
+h3.today-date {
+  font-size: 35px;
+  border-radius: 20px;
+  color: #faffff;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+i.detail-icon {
+  color: #faffff;
+}
+
+div.today-date {
+  border-radius: 10px;
+  background-color: none;
+}
+
+div.moving-main-icon {
+  position: relative;
+}
+
+h4.description {
+  font-size: 35px;
+  color: #a4d4ff;
+  padding: 1rem;
+  text-transform: capitalize;
+}
+
+div.description-text {
+  border-radius: 20px;
+  background-color: #1474cf;
+}
+
+i.weather-main-icon {
+  font-size: 190px;
+  color: #faffff;
+}
+
+h1.temperature-number {
+  font-size: 120px;
+  color: #faffff;
+  background-color: #65aaec;
+  border-radius: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+div.rotation-right {
+  transform: rotateX(29deg) rotateY(51deg);
+}
+
+div.changing-position {
+  position: relative;
+}
+
+div.changing-position-details {
+  position: relative;
+  transform: rotateX(345deg) rotateY(53deg);
+}
+
+h5.day {
+  font-size: 20px;
+}
+
+div.next-days-edit {
+  border-radius: 10px;
+  transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow;
+}
+div.next-days-edit:hover {
+  transform: translate3d(0px, -16px, 0px);
+  box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+    54px 54px 28px -10px rgba(34, 33, 81, 0.15);
+}
+
+div.color-monday {
+  color: #faffff;
+  background-color: #f2653e;
+}
+
+div.color-tuesday {
+  color: #faffff;
+  background-color: #fea060;
+}
+
+div.color-wed {
+  background-color: #ffd153;
+  color: #faffff;
+}
+
+div.color-thu {
+  background-color: #cdf473;
+  color: #3f9c3d;
+}
+
+div.color-fri {
+  background-color: #faffff;
+  color: #3598f4;
+}
+
+div.color-sat {
+  background-color: #1474cf;
+  color: #faffff;
+}
+
+div.width-next-days {
+  max-width: 300px;
+}
+
+p.temp {
+  font-size: 30px;
+}
+
+div.position-next-days {
+  position: relative;
+  width: 400px;
+  top: -21rem;
+  transform: rotateX(57deg) rotateZ(56deg);
+  box-shadow: -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+    28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+  transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow;
+}
+
+div.rotate-text {
+  transform: rotateX(20deg) rotateY(21deg);
+  position: relative;
+  top: 1rem;
+}
+
+div.moving-next-days {
+  transform: rotateZ(4deg) rotateY(-48deg) rotateX(55deg);
+  position: relative;
+  left: -20rem;
+  top: -4rem;
+}
+
+div.next-day-edit {
+  max-width: 400px;
+}
+
+p.five-days {
+  position: relative;
+  top: 18rem;
+  left: -1rem;
+  letter-spacing: normal;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+i.icon-days {
+  font-size: 40px;
+}
+
+div.main-card-temperature {
+  position: relative;
+  width: 8rem;
+}
+
+div.main-temperature {
+  position: relative;
+  top: 2rem;
+  width: 15rem;
+  transform: rotateX(20deg) rotateY(-45deg);
+}
+
+div.date {
+  position: relative;
+  top: 5rem;
+  transform: rotateX(20deg) rotateY(-45deg);
+}
+
+div.main-temperature-container {
+  position: relative;
+  top: 5rem;
+  transform: rotateX(20deg) rotateY(-45deg);
+}
+
+div.space-temp {
+  padding: 3rem;
+}
+
+div.space-date {
+  padding: 2rem;
+}
+
+h1.number-main-temperature {
+  font-size: 140px;
+}
+
+h5.card-title {
+  font-size: 30px;
+}
+
+p.card-text {
+  font-size: 20px;
+}
+
+div.main-precipitation {
+  position: relative;
+  width: 11rem;
+  padding: 0 0 0 0;
+  transform: rotateX(20deg) rotateY(-45deg);
+}
+
+div.width-main-container {
+  max-width: 100rem;
+}
+
+p.content-precipitation {
+  font-size: 30px;
+}
+
+button.celsius-fahrenheit {
+  margin: 0 1rem 1rem 1rem;
+  width: 6rem;
+  font-size: 30px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+  color: #faffff;
+}
+
+button.fahrenheit {
+  position: relative;
+  left: -2rem;
+  width: 5rem;
+  font-size: 30px;
+  transform: rotateX(20deg) rotateY(-45deg);
+}
+
+div.container-creator {
+  position: relative;
+  top: -18rem;
+  font-size: 20px;
+  font-family: "Fredoka One", cursive;
+}
+
+p.created-by {
+  color: #faffff;
+}
