@@ -71,9 +71,12 @@ function showSearchedCity(response) {
 
   let wind = document.querySelector(`#wind`);
   let windConvertion = response.data.wind.speed;
-  console.log(windConvertion);
   let windKilometer = Math.round((windConvertion * 18) / 5);
   wind.innerHTML = `${windKilometer} km/h`;
+
+  // Icon
+  let icon = (response.data.weather[0].icon);
+  
 }
 
 // Calling axios API + applying city searched into heading

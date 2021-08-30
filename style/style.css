@@ -240,8 +240,9 @@ p.five-days {
   transform: rotate(180deg);
 }
 
-i.icon-days {
-  font-size: 40px;
+div.icon-weather {
+  margin: 0 0 0 1rem;
+  padding: 0;
 }
 
 div.main-card-temperature {
