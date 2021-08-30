@@ -113,9 +113,6 @@ searchButton.addEventListener(`click`, searchCity);
 // Current Position Button + geolocation
 
 function showPosition(position) {
-  console.log(position.coords.longitude);
-  console.log(position.coords.latitude);
-
   let long = position.coords.longitude;
   let lat = position.coords.latitude;
 
@@ -137,3 +134,6 @@ function getCurrentLocation() {
 
 let button = document.querySelector(`#actual-location`);
 button.addEventListener(`click`, getCurrentLocation);
+
+// Current temperature (by location) in the main screen
+getCurrentLocation();
