@@ -75,8 +75,12 @@ function showSearchedCity(response) {
   wind.innerHTML = `${windKilometer} km/h`;
 
   // Icon
-  let icon = (response.data.weather[0].icon);
-  
+  let iconElement = response.data.weather[0].icon;
+  let iconURL = document.querySelector(`#icon-weather`);
+  iconURL.setAttribute(
+    `src`,
+    `http://openweathermap.org/img/wn/${iconElement}@2x.png`
+  );
 }
 
 // Calling axios API + applying city searched into heading
