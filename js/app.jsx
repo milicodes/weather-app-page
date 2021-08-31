@@ -65,6 +65,15 @@ function showSearchedCity(response) {
   let description = document.querySelector(`#description-weather`);
   description.innerHTML = response.data.weather[0].main;
 
+  //Changing color
+  console.log(description.textContent);
+  let colorDescription = description.textContent;
+  if ((colorDescription = `Clouds`)) {
+    document.body.style.background = ``;
+  } else if ((colorDescription = `Thunderstorm`)) {
+    document.body.style.background = `blue`;
+  }
+
   //Humidity
   let humidity = document.querySelector(`#humidity`);
   humidity.innerHTML = `${response.data.main.humidity}%`;
@@ -103,12 +112,12 @@ function searchCity(event) {
   axios.get(`${apiUrl}`).then(showSearchedCity);
 }
 
+// Calling function (search)
 let form = document.querySelector(`#user-input`);
 form.addEventListener(`submit`, searchCity);
 
 let searchButton = document.querySelector(`#search-input`);
 searchButton.addEventListener(`click`, searchCity);
-// axios
 
 // Current Position Button + geolocation
 
@@ -137,3 +146,5 @@ button.addEventListener(`click`, getCurrentLocation);
 
 // Current temperature (by location) in the main screen
 getCurrentLocation();
+
+// Changing background color (if conditions)
