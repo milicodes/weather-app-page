@@ -65,14 +65,21 @@ function showSearchedCity(response) {
   let description = document.querySelector(`#description-weather`);
   description.innerHTML = response.data.weather[0].main;
 
-  //Changing color
-  console.log(description.textContent);
-  let colorDescription = description.textContent;
-  if ((colorDescription = `Clouds`)) {
-    document.body.style.background = ``;
-  } else if ((colorDescription = `Thunderstorm`)) {
-    document.body.style.background = `blue`;
+  //Changing color background
+  function changingBackground() {
+    console.log(description.textContent);
+    let colorDescription = description.textContent;
+    if (colorDescription === `Clouds`) {
+      document.body.style.background = `linear-gradient(#005aa7, #fffde4)`;
+    } else if (colorDescription === `Rain`) {
+      document.body.style.background = `linear-gradient(#525252, #3d72b4)`;
+    }
   }
+
+  //Calling function
+  changingBackground();
+
+ 
 
   //Humidity
   let humidity = document.querySelector(`#humidity`);
@@ -146,5 +153,3 @@ button.addEventListener(`click`, getCurrentLocation);
 
 // Current temperature (by location) in the main screen
 getCurrentLocation();
-
-// Changing background color (if conditions)
