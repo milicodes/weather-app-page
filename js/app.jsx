@@ -69,17 +69,26 @@ function showSearchedCity(response) {
   function changingBackground() {
     console.log(description.textContent);
     let colorDescription = description.textContent;
+    let temperatureNumber = document.querySelector(`#temperature-grade`);
+    let cityColor = document.querySelector(`#show-city`);
+    let descriptionText = document.querySelector(`#description-text`);
+    let descriptionWeather = document.querySelector(`#description-weather`);
+    // Clouds
     if (colorDescription === `Clouds`) {
       document.body.style.background = `linear-gradient(#005aa7, #fffde4)`;
+      // Rain
     } else if (colorDescription === `Rain`) {
-      document.body.style.background = `linear-gradient(#525252, #3d72b4)`;
+      document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
+      temperatureNumber.style.backgroundColor = `#6D6CC4`;
+      cityColor.style.color = `#6D6CC4`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
+      descriptionText.style.backgroundColor = `#43309A`;
+      descriptionWeather.style.color = `#A4BBFB`;
     }
   }
 
   //Calling function
   changingBackground();
-
- 
 
   //Humidity
   let humidity = document.querySelector(`#humidity`);
