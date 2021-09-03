@@ -89,7 +89,6 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
       descriptionText.style.backgroundColor = `#43309A`;
       descriptionWeather.style.color = `#A4BBFB`;
-      // Clear sky
     } else if (colorDescription === `Thunderstorm`) {
       document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
       temperatureNumber.style.backgroundColor = `#6D6CC4`;
@@ -104,6 +103,7 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
       descriptionText.style.backgroundColor = `#43309A`;
       descriptionWeather.style.color = `#A4BBFB`;
+      // Clear sky
     } else if (colorDescription === `Clear`) {
       document.body.style.background = `linear-gradient(#56CCF2, #2F80ED)`;
       temperatureNumber.style.backgroundColor = `#368DEE`;
