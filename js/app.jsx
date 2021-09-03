@@ -81,7 +81,7 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #9FC0CD`;
       descriptionText.style.backgroundColor = `#1769AD`;
       descriptionWeather.style.color = `#EDF1E0`;
-      // Rain
+      // Rain, Thunderstorm and Snow
     } else if (colorDescription === `Rain`) {
       document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
       temperatureNumber.style.backgroundColor = `#6D6CC4`;
@@ -90,12 +90,41 @@ function showSearchedCity(response) {
       descriptionText.style.backgroundColor = `#43309A`;
       descriptionWeather.style.color = `#A4BBFB`;
       // Clear sky
+    } else if (colorDescription === `Thunderstorm`) {
+      document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
+      temperatureNumber.style.backgroundColor = `#6D6CC4`;
+      cityColor.style.color = `#6D6CC4`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
+      descriptionText.style.backgroundColor = `#43309A`;
+      descriptionWeather.style.color = `#A4BBFB`;
+    } else if (colorDescription === `Snow`) {
+      document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
+      temperatureNumber.style.backgroundColor = `#6D6CC4`;
+      cityColor.style.color = `#6D6CC4`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
+      descriptionText.style.backgroundColor = `#43309A`;
+      descriptionWeather.style.color = `#A4BBFB`;
     } else if (colorDescription === `Clear`) {
       document.body.style.background = `linear-gradient(#56CCF2, #2F80ED)`;
       temperatureNumber.style.backgroundColor = `#368DEE`;
       cityColor.style.color = `#368DEE`;
       cityColor.style[`boxShadow`] = `18px -12px 0px #368DEE`;
-      descriptionText.style.backgroundColor = `#368DEE`;
+      descriptionText.style.backgroundColor = `#2F81ED`;
+      descriptionWeather.style.color = `#FFFFFF`;
+      // Haze and Smoke
+    } else if (colorDescription === `Haze`) {
+      document.body.style.background = `linear-gradient(#F8CDDA, #1D2B64)`;
+      temperatureNumber.style.backgroundColor = `#65608B`;
+      cityColor.style.color = `#29346A`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #29346A`;
+      descriptionText.style.backgroundColor = `#353D71`;
+      descriptionWeather.style.color = `#FFFFFF`;
+    } else if (colorDescription === `Smoke`) {
+      document.body.style.background = `linear-gradient(#F8CDDA, #1D2B64)`;
+      temperatureNumber.style.backgroundColor = `#65608B`;
+      cityColor.style.color = `#29346A`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #29346A`;
+      descriptionText.style.backgroundColor = `#353D71`;
       descriptionWeather.style.color = `#FFFFFF`;
     }
   }
