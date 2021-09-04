@@ -136,6 +136,8 @@ h1.temperature-number {
   background-color: #65aaec;
   border-radius: 20px;
   font-family: "Open Sans", sans-serif;
+  max-width: 30rem;
+  text-align: center;
 }
 
 div.rotation-right {
