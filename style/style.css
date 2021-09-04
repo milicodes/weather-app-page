@@ -67,12 +67,12 @@ div.city-down {
 
 div.move-content-up {
   position: relative;
-  top: 6rem;
+  top: -20rem;
 }
 
 div.move-city-up {
   position: relative;
-  top: -26rem;
+  top: 9rem;
 }
 
 h1.tittle-city {
@@ -206,7 +206,7 @@ p.temp {
 div.position-next-days {
   position: relative;
   width: 400px;
-  top: -21rem;
+  top: 1rem;
   transform: rotateX(57deg) rotateZ(56deg);
   box-shadow: -1px 0 28px 0 rgba(34, 33, 81, 0.01),
     28px 28px 28px 0 rgba(34, 33, 81, 0.25);
@@ -323,7 +323,7 @@ button.fahrenheit {
 
 div.container-creator {
   position: relative;
-  top: -18rem;
+  top: 5rem;
   font-size: 20px;
   font-family: "Fredoka One", cursive;
 }
