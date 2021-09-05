@@ -72,7 +72,7 @@ div.move-content-up {
 
 div.move-city-up {
   position: relative;
-  top: 9rem;
+  top: 15rem;
 }
 
 h1.tittle-city {
@@ -208,7 +208,7 @@ p.temp {
 div.position-next-days {
   position: relative;
   width: 400px;
-  top: 1rem;
+  top: 2rem;
   transform: rotateX(57deg) rotateZ(56deg);
   box-shadow: -1px 0 28px 0 rgba(34, 33, 81, 0.01),
     28px 28px 28px 0 rgba(34, 33, 81, 0.25);
@@ -224,8 +224,6 @@ div.rotate-text {
 div.moving-next-days {
   transform: rotateZ(4deg) rotateY(-48deg) rotateX(55deg);
   position: relative;
-  left: -20rem;
-  top: -4rem;
 }
 
 div.next-day-edit {
