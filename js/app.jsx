@@ -29,34 +29,12 @@ let currentTime = new Date();
 formatDate(currentTime);
 console.log(new Date());
 
-// City
-
-// Celcius and farenheit
-
-function celciusTemperature(event) {
-  event.preventDefault();
-  let showTemperature = document.querySelector(`#temperature-grade`);
-  showTemperature.innerHTML = `10&degC`;
-}
-
-function fahrenhheitTemperature(event) {
-  event.preventDefault();
-  let showTemperature = document.querySelector(`#temperature-grade`);
-  showTemperature.innerHTML = `30&degF`;
-}
-
-let celcius = document.querySelector(`#celcius`);
-celcius.addEventListener(`click`, celciusTemperature);
-let fahrenheit = document.querySelector(`#fahrenheit`);
-fahrenheit.addEventListener(`click`, fahrenhheitTemperature);
-
 // API response + Main temperature + details + City name
 
 function showSearchedCity(response) {
   let temperatureSearched = Math.round(response.data.main.temp);
-  console.log(temperatureSearched);
-  let tempNumber = document.querySelector(`#temperature-grade`);
-  tempNumber.innerHTML = `${temperatureSearched}&degC`;
+  let tempNumber = document.querySelector(`#grade`);
+  tempNumber.innerHTML = `${temperatureSearched}`;
 
   let citySearch = document.querySelector(`#show-city`);
   citySearch.innerHTML = response.data.name;
@@ -97,6 +75,13 @@ function showSearchedCity(response) {
       descriptionText.style.backgroundColor = `#43309A`;
       descriptionWeather.style.color = `#A4BBFB`;
     } else if (colorDescription === `Snow`) {
+      document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
+      temperatureNumber.style.backgroundColor = `#6D6CC4`;
+      cityColor.style.color = `#6D6CC4`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
+      descriptionText.style.backgroundColor = `#43309A`;
+      descriptionWeather.style.color = `#A4BBFB`;
+    } else if (colorDescription === `Drizzle`) {
       document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
       temperatureNumber.style.backgroundColor = `#6D6CC4`;
       cityColor.style.color = `#6D6CC4`;
@@ -150,6 +135,8 @@ function showSearchedCity(response) {
   );
 }
 
+//  Calling Button Fahrenheit
+
 // Calling axios API + applying city searched into heading
 
 function searchCity(event) {
@@ -196,6 +183,67 @@ function showPosition(position) {
 function getCurrentLocation() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+// Celcius
+function showSearchedCelcius(event) {
+  event.preventDefault();
+  let tempNumberCelcius = document.querySelector(`#temperature-grade`);
+  tempNumberCelcius.innerHTML = celciusGrade;
+}
+
+// Fahrenheit
+function showSearchedFahrenheit(response) {
+  let temperatureSearched = Math.round(response.data.main.temp);
+  let tempNumber = document.querySelector(`#temperature-grade`);
+  tempNumber.innerHTML = `${temperatureSearched}&degF`;
+}
+
+// Celcius
+function showSearchedCelcius(response) {
+  let temperatureSearched = Math.round(response.data.main.temp);
+  let tempNumber = document.querySelector(`#temperature-grade`);
+  tempNumber.innerHTML = `${temperatureSearched}&degC`;
+}
+
+// Axios information + Calling temperature for fahrenheit
+function searchFahrenheit(event) {
+  event.preventDefault();
+  let citySearched = document.querySelector(`#show-city`).textContent;
+
+  // axios API (for fahrenheit)
+  let apiKey = `62a816282d3b51b7451838a6b7b63934`;
+  let mainLink = `https://api.openweathermap.org/data/2.5/weather?`;
+  let units = `imperial`;
+
+  let apiUrl = `${mainLink}q=${citySearched}&units=${units}&appid=${apiKey}`;
+  console.log(`${apiUrl}`);
+
+  axios.get(`${apiUrl}`).then(showSearchedFahrenheit);
+}
+
+// Axios information + Calling temperature for Celcius
+function searchCelcius(event) {
+  event.preventDefault();
+  let citySearched = document.querySelector(`#show-city`).textContent;
+
+  // axios API (for fahrenheit)
+  let apiKey = `62a816282d3b51b7451838a6b7b63934`;
+  let mainLink = `https://api.openweathermap.org/data/2.5/weather?`;
+  let units = `metric`;
+
+  let apiUrl = `${mainLink}q=${citySearched}&units=${units}&appid=${apiKey}`;
+  console.log(`${apiUrl}`);
+
+  axios.get(`${apiUrl}`).then(showSearchedCelcius);
+}
+
+// Calling function (Fahrenheit)
+let selectingFahrenheit = document.querySelector(`#fahrenheit`);
+selectingFahrenheit.addEventListener(`click`, searchFahrenheit);
+
+//Calling function (Celcius)
+let selectingCelcius = document.querySelector(`#celcius`);
+selectingCelcius.addEventListener(`click`, searchCelcius);
 
 // Button for current location
 

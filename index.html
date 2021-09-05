@@ -71,42 +71,39 @@
       </div>
     </form>
 
-   <!--City-->
-      <div class="row rotation-right move-city-up g-2">
-        <div class="col-5"></div>
-        <div class="col-4">
-          <div class="text-center">
-            <h1 class="tittle-city" id="show-city">TOKYO</h1>
-          </div>
-          <!--Icon-->
-          <div class="col-3"></div>
-          <div class="col-9 text-center icon-weather">
-            <img
-              src="http://openweathermap.org/img/wn/10d@2x.png"
-              alt="Image of the weather"
-              class="icon-weather"
-              id="icon-weather"
-              width="250px"
-            />
-          </div>
-          <!--Space for description-->
-          
-          <div class="col-6">
-            <!--Weather Description-->
-            <div
-              class="p-3 text-center rotate-text description-text"
-              id="description-text"
-            >
-              <h4 class="description" id="description-weather">
-                Partly Cloudy
-              </h4>
-            </div>
+    <!--City-->
+    <div class="row rotation-right move-city-up g-2">
+      <div class="col-5"></div>
+      <div class="col-4">
+        <div class="text-center">
+          <h1 class="tittle-city" id="show-city">TOKYO</h1>
+        </div>
+        <!--Icon-->
+        <div class="col-3"></div>
+        <div class="col-9 text-center icon-weather">
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="Image of the weather"
+            class="icon-weather"
+            id="icon-weather"
+            width="250px"
+          />
+        </div>
+        <!--Space for description-->
+
+        <div class="col-6">
+          <!--Weather Description-->
+          <div
+            class="p-3 text-center rotate-text description-text"
+            id="description-text"
+          >
+            <h4 class="description" id="description-weather">Partly Cloudy</h4>
           </div>
         </div>
       </div>
     </div>
-    
-      <!--Right side-->
+
+    <!--Right side-->
     <!--Main Information-->
     <div class="container-fluid width-main-container move-content-up">
       <div class="row g-3 changing-position-details">
@@ -124,7 +121,7 @@
         <div class="col-6">
           <div class="changing-position">
             <div class="p-6 text-center">
-              <h1 class="temperature-number" id="temperature-grade">33&degC</h1>
+              <h1 class="temperature-number" id="temperature-grade"> <span class="temperature-number" id="grade">33</span>&degC</h1>
             </div>
           </div>
         </div>
@@ -135,9 +132,9 @@
             <div class="text-center details-temp">
               <p>
                 <i class="fas fa-tint detail-icon" id="humid-icon"></i
-                ><span id="humidity"> 56% </span>
+                ><span class="percentage" id="humidity"> 56% </span>
                 <i class="fas fa-wind detail-icon" id="wind-icon"></i>
-                <span id="wind">16 km/h</span>
+                <span class="percentage" id="wind">16 km/h</span>
               </p>
             </div>
           </div>
@@ -163,79 +160,80 @@
           </div>
         </div>
       </div>
-      
-    <!--Next 5 days-->
-    <div class="container-fluid position-next-days">
-      <div class="row g-2">
-        <div class="col-4">
-          <div class="p-3 text-center next-days-edit color-monday">
-            <h5 class="card-title">Mon</h5>
-            <i class="fas fa-cloud-sun icon icon-days"></i>
-            <p class="card-text">34&deg 25&deg</p>
+
+      <!--Next 5 days-->
+      <div class="container-fluid position-next-days">
+        <div class="row g-2">
+          <div class="col-4">
+            <div class="p-3 text-center next-days-edit color-monday">
+              <h5 class="card-title">Mon</h5>
+              <i class="fas fa-cloud-sun icon icon-days"></i>
+              <p class="card-text">34&deg 25&deg</p>
+            </div>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="p-3 text-center next-days-edit color-tuesday">
-            <h5 class="card-title">Tue</h5>
-            <i class="fas fa-cloud-sun icon icon-days"></i>
-            <p class="card-text">34&deg 25&deg</p>
+          <div class="col-4">
+            <div class="p-3 text-center next-days-edit color-tuesday">
+              <h5 class="card-title">Tue</h5>
+              <i class="fas fa-cloud-sun icon icon-days"></i>
+              <p class="card-text">34&deg 25&deg</p>
+            </div>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="p-3 text-center next-days-edit color-wed">
-            <h5 class="card-title">Wed</h5>
-            <i class="fas fa-cloud-sun icon icon-days"></i>
-            <p class="card-text">34&deg 25&deg</p>
+          <div class="col-4">
+            <div class="p-3 text-center next-days-edit color-wed">
+              <h5 class="card-title">Wed</h5>
+              <i class="fas fa-cloud-sun icon icon-days"></i>
+              <p class="card-text">34&deg 25&deg</p>
+            </div>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="p-3 text-center next-days-edit color-thu">
-            <h5 class="card-title">Thu</h5>
-            <i class="fas fa-cloud-sun icon icon-days"></i>
-            <p class="card-text">34&deg 25&deg</p>
+          <div class="col-4">
+            <div class="p-3 text-center next-days-edit color-thu">
+              <h5 class="card-title">Thu</h5>
+              <i class="fas fa-cloud-sun icon icon-days"></i>
+              <p class="card-text">34&deg 25&deg</p>
+            </div>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="p-3 text-center next-days-edit color-fri">
-            <h5 class="card-title">Fri</h5>
-            <i class="fas fa-cloud-sun icon icon-days"></i>
-            <p class="card-text">34&deg 25&deg</p>
+          <div class="col-4">
+            <div class="p-3 text-center next-days-edit color-fri">
+              <h5 class="card-title">Fri</h5>
+              <i class="fas fa-cloud-sun icon icon-days"></i>
+              <p class="card-text">34&deg 25&deg</p>
+            </div>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="p-3 text-center next-days-edit color-sat">
-            <h5 class="card-title">Sat</h5>
-            <i class="fas fa-cloud-sun icon icon-days"></i>
-            <p class="card-text">34&deg 25&deg</p>
+          <div class="col-4">
+            <div class="p-3 text-center next-days-edit color-sat">
+              <h5 class="card-title">Sat</h5>
+              <i class="fas fa-cloud-sun icon icon-days"></i>
+              <p class="card-text">34&deg 25&deg</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!--Created by Mili 2021-->
-    <div class="container">
-      <div class="row">
-        <div class="col text-center container-creator">
-          <p class="created-by">
-            <a
-              href="https://github.com/milicodes/weather-app.git"
-              target="_blank"
-              class="created-by"
-              >Open-source code</a
-            >
-            by
-            <a
-              href="https://www.instagram.com/mili.codes/"
-              target="_blank"
-              class="created-by"
-            >
-              Mili</a
-            >
-            ☁ 2021
-          </p>
+      <!--Created by Mili 2021-->
+      <div class="container">
+        <div class="row">
+          <div class="col text-center container-creator">
+            <p class="created-by">
+              <a
+                href="https://github.com/milicodes/weather-app.git"
+                target="_blank"
+                class="created-by"
+                >Open-source code</a
+              >
+              by
+              <a
+                href="https://www.instagram.com/mili.codes/"
+                target="_blank"
+                class="created-by"
+              >
+                Mili</a
+              >
+              ☁ 2021
+            </p>
+          </div>
         </div>
       </div>
+      <!--Javascript Doc-->
+      <script src="js/app.jsx"></script>
     </div>
-    <!--Javascript Doc-->
-    <script src="js/app.jsx"></script>
   </body>
 </html>
