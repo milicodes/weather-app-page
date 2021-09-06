@@ -184,12 +184,10 @@ function getCurrentLocation() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-// Celcius
-function showSearchedCelcius(event) {
-  event.preventDefault();
-  let tempNumberCelcius = document.querySelector(`#temperature-grade`);
-  tempNumberCelcius.innerHTML = celciusGrade;
-}
+// Button for current location
+
+let button = document.querySelector(`#actual-location`);
+button.addEventListener(`click`, getCurrentLocation);
 
 // Fahrenheit
 function showSearchedFahrenheit(response) {
@@ -244,11 +242,6 @@ selectingFahrenheit.addEventListener(`click`, searchFahrenheit);
 //Calling function (Celcius)
 let selectingCelcius = document.querySelector(`#celcius`);
 selectingCelcius.addEventListener(`click`, searchCelcius);
-
-// Button for current location
-
-let button = document.querySelector(`#actual-location`);
-button.addEventListener(`click`, getCurrentLocation);
 
 // Current temperature (by location) in the main screen
 getCurrentLocation();
