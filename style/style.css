@@ -21,11 +21,11 @@ body {
     #3a7bd5,
     #00d2ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  zoom: 75%;
+  zoom: 77%;
 }
 div.row-margin {
   position: relative;
-  top: 2rem;
+  top: 4rem;
   left: 2rem;
   margin-bottom: 2rem;
 }
@@ -67,12 +67,12 @@ div.city-down {
 
 div.move-content-up {
   position: relative;
-  top: -20rem;
+  top: -18rem;
 }
 
 div.move-city-up {
   position: relative;
-  top: 15rem;
+  top: 14rem;
 }
 
 h1.tittle-city {
@@ -97,6 +97,7 @@ h3.today-date {
   color: #faffff;
   font-family: "Merriweather Sans", sans-serif;
   font-weight: 700;
+  text-align: center;
   letter-spacing: 5px;
 }
 
@@ -114,7 +115,7 @@ div.moving-main-icon {
 }
 
 h4.description {
-  font-size: 35px;
+  font-size: 40px;
   color: #a4d4ff;
   padding: 1rem;
   text-transform: capitalize;
@@ -154,7 +155,7 @@ div.changing-position-details {
 }
 
 h5.day {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 div.next-days-edit {
@@ -197,17 +198,13 @@ div.color-sat {
   color: #faffff;
 }
 
-div.width-next-days {
-  max-width: 300px;
-}
-
 p.temp {
   font-size: 30px;
 }
 
 div.position-next-days {
   position: relative;
-  width: 400px;
+  width: 30rem;
   top: 2rem;
   transform: rotateX(57deg) rotateZ(56deg);
   box-shadow: -1px 0 28px 0 rgba(34, 33, 81, 0.01),
@@ -233,7 +230,6 @@ div.next-day-edit {
 p.five-days {
   position: relative;
   top: 18rem;
-  left: -1rem;
   letter-spacing: normal;
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -286,7 +282,7 @@ h5.card-title {
 }
 
 p.card-text {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 div.main-precipitation {
@@ -326,6 +322,7 @@ div.container-creator {
   top: 5rem;
   font-size: 20px;
   font-family: "Fredoka One", cursive;
+  text-align: center;
 }
 
 p.created-by {
