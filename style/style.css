@@ -67,12 +67,12 @@ div.city-down {
 
 div.move-content-up {
   position: relative;
-  top: -18rem;
+  top: -17rem;
 }
 
 div.move-city-up {
   position: relative;
-  top: 14rem;
+  top: 18rem;
 }
 
 h1.tittle-city {
@@ -124,6 +124,7 @@ h4.description {
 div.description-text {
   border-radius: 20px;
   background-color: #1474cf;
+  margin-left: 8rem;
 }
 
 i.weather-main-icon {
@@ -205,7 +206,7 @@ p.temp {
 div.position-next-days {
   position: relative;
   width: 30rem;
-  top: 2rem;
+  top: 5rem;
   transform: rotateX(57deg) rotateZ(56deg);
   box-shadow: -1px 0 28px 0 rgba(34, 33, 81, 0.01),
     28px 28px 28px 0 rgba(34, 33, 81, 0.25);
@@ -319,7 +320,7 @@ button.fahrenheit {
 
 div.container-creator {
   position: relative;
-  top: 5rem;
+  top: 7rem;
   font-size: 20px;
   font-family: "Fredoka One", cursive;
   text-align: center;
