@@ -1,3 +1,7 @@
+html {
+  height: max-content;
+}
+
 span.percentage {
   margin: 2rem;
   color: #faffff;
@@ -12,6 +16,9 @@ a {
 }
 
 body {
+  height: max-content;
+  background-size: cover;
+  background-repeat: no-repeat;
   background: #00d2ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     #3a7bd5,
@@ -21,8 +28,15 @@ body {
     #3a7bd5,
     #00d2ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  zoom: 75%;
+  zoom: 70%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding: 0;
+  background-attachment: fixed;
+  zoom: 70%;
 }
+
 div.row-margin {
   position: relative;
   top: 4rem;
@@ -60,19 +74,12 @@ div.date-down {
   top: 4rem;
 }
 
-div.city-down {
-  position: relative;
-  top: 9rem;
-}
-
 div.move-content-up {
-  position: relative;
-  top: -17rem;
+  margin-top: -30rem;
 }
 
 div.move-city-up {
-  position: relative;
-  top: 18rem;
+  margin-top: 15rem;
 }
 
 h1.tittle-city {
@@ -124,7 +131,6 @@ h4.description {
 div.description-text {
   border-radius: 20px;
   background-color: #1474cf;
-  margin-left: 8rem;
 }
 
 i.weather-main-icon {
@@ -320,8 +326,8 @@ button.fahrenheit {
 
 div.container-creator {
   position: relative;
-  top: 7rem;
-  font-size: 20px;
+  top: 10rem;
+  font-size: 25px;
   font-family: "Fredoka One", cursive;
   text-align: center;
 }
