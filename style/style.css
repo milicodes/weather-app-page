@@ -16,7 +16,7 @@ a {
 }
 
 body {
-  height: max-content;
+  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background: #00d2ff; /* fallback for old browsers */
@@ -30,7 +30,7 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   zoom: 70%;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 40rem;
   margin-left: 0px;
   padding: 0;
   background-attachment: fixed;
@@ -75,10 +75,13 @@ div.date-down {
 }
 
 div.move-content-up {
-  margin-top: -30rem;
+  margin-top: -31rem;
+  margin-bottom: 1rem;
+  position: relative;
 }
 
 div.move-city-up {
+  position: relative;
   margin-top: 15rem;
 }
 
@@ -126,6 +129,8 @@ h4.description {
   color: #a4d4ff;
   padding: 1rem;
   text-transform: capitalize;
+  margin: 0 auto;
+  max-width: max-content;
 }
 
 div.description-text {
@@ -211,8 +216,8 @@ p.temp {
 
 div.position-next-days {
   position: relative;
-  width: 30rem;
-  top: 5rem;
+  width: 29rem;
+  margin-top: 4rem;
   transform: rotateX(57deg) rotateZ(56deg);
   box-shadow: -1px 0 28px 0 rgba(34, 33, 81, 0.01),
     28px 28px 28px 0 rgba(34, 33, 81, 0.25);
@@ -326,7 +331,7 @@ button.fahrenheit {
 
 div.container-creator {
   position: relative;
-  top: 10rem;
+  top: 5rem;
   font-size: 25px;
   font-family: "Fredoka One", cursive;
   text-align: center;

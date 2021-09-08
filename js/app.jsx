@@ -71,6 +71,7 @@ function showSearchedCity(response) {
       descriptionWeather.style.color = `#A4BBFB`;
     } else if (colorDescription === `Thunderstorm`) {
       document.body.style.backgroundAttachment = `fixed`;
+      document.body.style.height = `max-content`;
       document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
       temperatureNumber.style.backgroundColor = `#6D6CC4`;
       cityColor.style.color = `#6D6CC4`;
