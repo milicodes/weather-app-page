@@ -33,8 +33,8 @@ console.log(new Date());
 
 function showSearchedCity(response) {
   let temperatureSearched = Math.round(response.data.main.temp);
-  let tempNumber = document.querySelector(`#grade`);
-  tempNumber.innerHTML = `${temperatureSearched}`;
+  let tempNumber = document.querySelector(`#temperature-grade`);
+  tempNumber.innerHTML = `${temperatureSearched}&degC`;
 
   let citySearch = document.querySelector(`#show-city`);
   citySearch.innerHTML = response.data.name;
@@ -103,7 +103,7 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #368DEE`;
       descriptionText.style.backgroundColor = `#2F81ED`;
       descriptionWeather.style.color = `#FFFFFF`;
-      // Haze and Smoke
+      // Haze and Smoke / Mist
     } else if (colorDescription === `Haze`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#F8CDDA, #1D2B64)`;
@@ -113,6 +113,14 @@ function showSearchedCity(response) {
       descriptionText.style.backgroundColor = `#353D71`;
       descriptionWeather.style.color = `#FFFFFF`;
     } else if (colorDescription === `Smoke`) {
+      document.body.style.backgroundAttachment = `fixed`;
+      document.body.style.background = `linear-gradient(#F8CDDA, #1D2B64)`;
+      temperatureNumber.style.backgroundColor = `#65608B`;
+      cityColor.style.color = `#29346A`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #29346A`;
+      descriptionText.style.backgroundColor = `#353D71`;
+      descriptionWeather.style.color = `#FFFFFF`;
+    } else if (colorDescription === `Mist`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#F8CDDA, #1D2B64)`;
       temperatureNumber.style.backgroundColor = `#65608B`;
