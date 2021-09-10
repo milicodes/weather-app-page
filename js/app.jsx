@@ -45,6 +45,8 @@ function showSearchedCity(response) {
 
   //Changing color background
   function changingBackground() {
+    let description = document.querySelector(`#description-weather`);
+    let iconWeather = document.querySelector(`#icon-weather`);
     console.log(description.textContent);
     let colorDescription = description.textContent;
     let temperatureNumber = document.querySelector(`#temperature-grade`);
@@ -53,22 +55,25 @@ function showSearchedCity(response) {
     let descriptionWeather = document.querySelector(`#description-weather`);
     // Clouds
     if (colorDescription === `Clouds`) {
-      document.body.style.background = `linear-gradient(#005aa7, #fffde4)`;
+      document.body.style.background = `linear-gradient(#2F80ED, #56CCF2)`;
       document.body.style.backgroundAttachment = `fixed`;
-      temperatureNumber.style.backgroundColor = `#7DAAC5`;
-      cityColor.style.color = `#9FC0CD`;
-      cityColor.style[`boxShadow`] = `18px -12px 0px #9FC0CD`;
-      descriptionText.style.backgroundColor = `#1769AD`;
-      descriptionWeather.style.color = `#EDF1E0`;
+      temperatureNumber.style.backgroundColor = `#4EBCF1`;
+      cityColor.style.color = `#8BD8F9`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #8BD8F9`;
+      descriptionText.style.backgroundColor = `#CEF2FF`;
+      descriptionWeather.style.color = `#42A5EF`;
       // Rain, Thunderstorm and Snow
     } else if (colorDescription === `Rain`) {
-      document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
+      descriptionWeather.innerHTML;
+      document.body.style.background = `linear-gradient(#4A00E0, #8E2DE2)`;
       document.body.style.backgroundAttachment = `fixed`;
-      temperatureNumber.style.backgroundColor = `#6D6CC4`;
-      cityColor.style.color = `#6D6CC4`;
-      cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
-      descriptionText.style.backgroundColor = `#43309A`;
-      descriptionWeather.style.color = `#A4BBFB`;
+      temperatureNumber.style.backgroundColor = `#8549D8`;
+      cityColor.style.color = `#AD84E8`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #AD84E8`;
+      descriptionText.style.backgroundColor = `#DCC9FF`;
+      descriptionWeather.style.color = `#7119E1`;
+      description.innerHTML = `It's raining!`;
+      iconWeather.innerHTML = `<i class="fas fa-cloud-rain"></i>`;
     } else if (colorDescription === `Thunderstorm`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.height = `max-content`;
@@ -78,6 +83,7 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
       descriptionText.style.backgroundColor = `#43309A`;
       descriptionWeather.style.color = `#A4BBFB`;
+      document.body.style.transition = `all 0.5s ease`;
     } else if (colorDescription === `Snow`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
@@ -86,6 +92,7 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
       descriptionText.style.backgroundColor = `#43309A`;
       descriptionWeather.style.color = `#A4BBFB`;
+      document.body.style.transition = `all 0.5s ease`;
     } else if (colorDescription === `Drizzle`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
@@ -94,15 +101,17 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
       descriptionText.style.backgroundColor = `#43309A`;
       descriptionWeather.style.color = `#A4BBFB`;
+      document.body.style.transition = `all 0.5s ease`;
       // Clear sky
     } else if (colorDescription === `Clear`) {
       document.body.style.backgroundAttachment = `fixed`;
-      document.body.style.background = `linear-gradient(#56CCF2, #2F80ED)`;
+      document.body.style.background = `linear-gradient(#2980B9, #6DD5FA, #FFFFFF)`;
       temperatureNumber.style.backgroundColor = `#368DEE`;
       cityColor.style.color = `#368DEE`;
       cityColor.style[`boxShadow`] = `18px -12px 0px #368DEE`;
       descriptionText.style.backgroundColor = `#2F81ED`;
       descriptionWeather.style.color = `#FFFFFF`;
+      document.body.style.transition = `all 0.5s ease`;
       // Haze and Smoke / Mist
     } else if (colorDescription === `Haze`) {
       document.body.style.backgroundAttachment = `fixed`;
@@ -112,6 +121,7 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #29346A`;
       descriptionText.style.backgroundColor = `#353D71`;
       descriptionWeather.style.color = `#FFFFFF`;
+      document.body.style.transition = `all 0.5s ease-in-out`;
     } else if (colorDescription === `Smoke`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#F8CDDA, #1D2B64)`;
@@ -120,6 +130,7 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #29346A`;
       descriptionText.style.backgroundColor = `#353D71`;
       descriptionWeather.style.color = `#FFFFFF`;
+      document.body.style.transition = `all 0.5s ease`;
     } else if (colorDescription === `Mist`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#F8CDDA, #1D2B64)`;
@@ -144,15 +155,14 @@ function showSearchedCity(response) {
   wind.innerHTML = `${windKilometer} km/h`;
 
   // Icon
-  let iconElement = response.data.weather[0].icon;
-  let iconURL = document.querySelector(`#icon-weather`);
-  iconURL.setAttribute(
-    `src`,
-    `http://openweathermap.org/img/wn/${iconElement}@2x.png`
-  );
+  // let iconElement = response.data.weather[0].icon;
+  // let iconURL = document.querySelector(`#icon-weather`);
+ // iconURL.setAttribute(
+    //`src`,
+    //`http://openweathermap.org/img/wn/${iconElement}@2x.png`
+  //);
 }
 
-//  Calling Button Fahrenheit
 
 // Calling axios API + applying city searched into heading
 
@@ -162,11 +172,21 @@ function searchCity(event) {
   let showingCity = document.querySelector(`#show-city`);
   showingCity.innerHTML = userInputCity.value;
 
+  let hey = document.querySelector(`#enter-city`);
+  let heyYou = hey.value;
+  if (heyYou === "") {
+    alert(`Hey! 😺 Type a city! 🏙`);
+    showingCity.innerHTML = `Waiting...`;
+  }
+
   // axios API
   let apiKey = `62a816282d3b51b7451838a6b7b63934`;
   let mainLink = `https://api.openweathermap.org/data/2.5/weather?`;
   let units = `metric`;
   let cityName = userInputCity.value;
+  if (cityName === "") {
+    return false;
+  }
 
   let apiUrl = `${mainLink}q=${cityName}&units=${units}&appid=${apiKey}`;
   console.log(`${apiUrl}`);
@@ -177,7 +197,6 @@ function searchCity(event) {
 // Calling function (search)
 let form = document.querySelector(`#user-input`);
 form.addEventListener(`submit`, searchCity);
-
 let searchButton = document.querySelector(`#search-input`);
 searchButton.addEventListener(`click`, searchCity);
 

@@ -1,5 +1,6 @@
 html {
   height: max-content;
+  margin: 0 auto;
 }
 
 span.percentage {
@@ -34,7 +35,8 @@ body {
   margin-left: 0px;
   padding: 0;
   background-attachment: fixed;
-  zoom: 70%;
+  zoom: 60%;
+  transition: all 0.5s ease-in-out;
 }
 
 div.row-margin {
@@ -75,20 +77,21 @@ div.date-down {
 }
 
 div.move-content-up {
-  margin-top: -31rem;
+  margin-top: -32rem;
   margin-bottom: 1rem;
   position: relative;
 }
 
 div.move-city-up {
   position: relative;
-  margin-top: 15rem;
+  margin-top: 13rem;
 }
 
 h1.tittle-city {
   display: inline-block;
   position: relative;
   border-radius: 20px;
+  margin-left: 6rem;
   text-transform: uppercase;
   padding: 2rem;
   font-family: "Merriweather Sans", sans-serif;
@@ -129,18 +132,13 @@ h4.description {
   color: #a4d4ff;
   padding: 1rem;
   text-transform: capitalize;
-  margin: 0 auto;
-  max-width: max-content;
 }
 
 div.description-text {
   border-radius: 20px;
   background-color: #1474cf;
-}
-
-i.weather-main-icon {
-  font-size: 190px;
-  color: #faffff;
+  margin-left: 4rem;
+  padding: 0.5rem;
 }
 
 h1.temperature-number {
@@ -248,9 +246,10 @@ p.five-days {
   transform: rotate(180deg);
 }
 
-div.icon-weather {
-  margin: 0 0 0 1rem;
-  padding: 0;
+i.icon-weather {
+  font-size: 180px;
+  margin: 4rem 0 4rem 8rem;
+  color: #faffff;
 }
 
 div.main-card-temperature {
@@ -313,9 +312,9 @@ p.content-precipitation {
 }
 
 button.celsius-fahrenheit {
-  margin: 0 1rem 1rem 1rem;
+  margin: 1rem 2rem 1rem 1rem;
   width: 6rem;
-  font-size: 30px;
+  font-size: 35px;
   font-family: "Merriweather Sans", sans-serif;
   font-weight: 700;
   color: #faffff;
@@ -335,6 +334,7 @@ div.container-creator {
   font-size: 25px;
   font-family: "Fredoka One", cursive;
   text-align: center;
+  margin: 0 auto;
 }
 
 p.created-by {
