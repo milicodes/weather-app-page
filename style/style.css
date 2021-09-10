@@ -1,5 +1,5 @@
 html {
-  height: max-content;
+  height: fit-content;
   margin: 0 auto;
 }
 
@@ -34,7 +34,6 @@ body {
     #00d2ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin-top: 0px;
-  margin-bottom: 40rem;
   margin-left: 0px;
   padding: 0;
   background-attachment: fixed;
