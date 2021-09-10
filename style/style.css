@@ -3,6 +3,10 @@ html {
   margin: 0 auto;
 }
 
+div.input-group {
+  zoom: 120%;
+}
+
 span.percentage {
   margin: 2rem;
   color: #faffff;
@@ -29,7 +33,6 @@ body {
     #3a7bd5,
     #00d2ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  zoom: 70%;
   margin-top: 0px;
   margin-bottom: 40rem;
   margin-left: 0px;
@@ -84,7 +87,7 @@ div.move-content-up {
 
 div.move-city-up {
   position: relative;
-  margin-top: 13rem;
+  margin-top: 10rem;
 }
 
 h1.tittle-city {
@@ -132,6 +135,7 @@ h4.description {
   color: #a4d4ff;
   padding: 1rem;
   text-transform: capitalize;
+  word-wrap: break-word;
 }
 
 div.description-text {

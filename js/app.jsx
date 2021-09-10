@@ -72,18 +72,15 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #AD84E8`;
       descriptionText.style.backgroundColor = `#DCC9FF`;
       descriptionWeather.style.color = `#7119E1`;
-      description.innerHTML = `It's raining!`;
-      iconWeather.innerHTML = `<i class="fas fa-cloud-rain"></i>`;
     } else if (colorDescription === `Thunderstorm`) {
+      descriptionWeather.innerHTML;
+      document.body.style.background = `linear-gradient(#4A00E0, #8E2DE2)`;
       document.body.style.backgroundAttachment = `fixed`;
-      document.body.style.height = `max-content`;
-      document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
-      temperatureNumber.style.backgroundColor = `#6D6CC4`;
-      cityColor.style.color = `#6D6CC4`;
-      cityColor.style[`boxShadow`] = `18px -12px 0px #6D6CC4`;
-      descriptionText.style.backgroundColor = `#43309A`;
-      descriptionWeather.style.color = `#A4BBFB`;
-      document.body.style.transition = `all 0.5s ease`;
+      temperatureNumber.style.backgroundColor = `#8549D8`;
+      cityColor.style.color = `#AD84E8`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #AD84E8`;
+      descriptionText.style.backgroundColor = `#DCC9FF`;
+      descriptionWeather.style.color = `#7119E1`;
     } else if (colorDescription === `Snow`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
@@ -154,15 +151,38 @@ function showSearchedCity(response) {
   let windKilometer = Math.round((windConvertion * 18) / 5);
   wind.innerHTML = `${windKilometer} km/h`;
 
-  // Icon
+  // Icon and condition (changing icon)
+
+  let iconElement = document.querySelector(`#icon-weather`);
+  console.log(iconElement);
+
+  // Clear
+  if (description.textContent === `Clear`) {
+    iconElement.removeAttribute(`class`);
+    iconElement.setAttribute(`class`, `fas fa-sun icon-weather`);
+    // Rain
+  } else if (description.textContent === `Rain`) {
+    iconElement.removeAttribute(`class`);
+    iconElement.setAttribute(
+      `class`,
+      `fas fa-cloud-showers-heavy icon-weather`
+    );
+    // Clouds
+  } else if (description.textContent === `Clouds`) {
+    iconElement.removeAttribute(`class`);
+    iconElement.setAttribute(`class`, `fas fa-cloud-sun icon-weather`);
+  } else if (description.textContent === `Thunderstorm`) {
+    iconElement.removeAttribute(`class`);
+    iconElement.setAttribute(`class`, `fas fa-bolt icon-weather`);
+  }
+
   // let iconElement = response.data.weather[0].icon;
   // let iconURL = document.querySelector(`#icon-weather`);
- // iconURL.setAttribute(
-    //`src`,
-    //`http://openweathermap.org/img/wn/${iconElement}@2x.png`
+  // iconURL.setAttribute(
+  //`src`,
+  //`http://openweathermap.org/img/wn/${iconElement}@2x.png`
   //);
 }
-
 
 // Calling axios API + applying city searched into heading
 
