@@ -81,6 +81,7 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #AD84E8`;
       descriptionText.style.backgroundColor = `#DCC9FF`;
       descriptionWeather.style.color = `#7119E1`;
+      // Snow
     } else if (colorDescription === `Snow`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
@@ -90,6 +91,7 @@ function showSearchedCity(response) {
       descriptionText.style.backgroundColor = `#43309A`;
       descriptionWeather.style.color = `#A4BBFB`;
       document.body.style.transition = `all 0.5s ease`;
+      // Drizzle
     } else if (colorDescription === `Drizzle`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#a8c0ff, #3f2b96)`;
@@ -174,8 +176,22 @@ function showSearchedCity(response) {
   } else if (description.textContent === `Thunderstorm`) {
     iconElement.removeAttribute(`class`);
     iconElement.setAttribute(`class`, `fas fa-bolt icon-weather`);
-  }
-
+  } else if (description.textContent === `Haze`) {
+    iconElement.removeAttribute(`class`);
+    iconElement.setAttribute(`class`, `fas fa-smog icon-weather`);
+  } else if (description.textContent === `Mist`) {
+    iconElement.removeAttribute(`class`);
+    iconElement.setAttribute(`class`, `fas fa-smog icon-weather`);
+  } else if (description.textContent === `Drizzle`) {
+    iconElement.removeAttribute(`class`);
+    iconElement.setAttribute(`class`, `fas fa-cloud-rain icon-weather`);
+  } else if (description.textContent === `Smoke`) {
+    iconElement.removeAttribute(`class`);
+    iconElement.setAttribute(`class`, `fas fa-smog icon-weather`);
+  } else if (description.textContent === `Snow`) {
+    iconElement.removeAttribute(`class`);
+    iconElement.setAttribute(`class`, `fas fa-snowflake icon-weather`);
+  } 
   // let iconElement = response.data.weather[0].icon;
   // let iconURL = document.querySelector(`#icon-weather`);
   // iconURL.setAttribute(
