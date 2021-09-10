@@ -29,6 +29,21 @@ let currentTime = new Date();
 formatDate(currentTime);
 console.log(new Date());
 
+// Coordinates for forecast
+function getCoordinates(coordinates) {
+  let latitude = coordinates.lat;
+  let longitude = coordinates.lon;
+  let apiKey = `62a816282d3b51b7451838a6b7b63934`;
+  let apiCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+  console.log(apiCall);
+axios.get(apiCall).then(dailyForecast);
+}
+
+// Daily forecast
+function dailyForecast(response) {
+  console.log(response.data.daily);
+}
+
 // API response + Main temperature + details + City name
 
 function showSearchedCity(response) {
@@ -42,6 +57,9 @@ function showSearchedCity(response) {
   // Description
   let description = document.querySelector(`#description-weather`);
   description.innerHTML = response.data.weather[0].main;
+
+  // Calling Coordinates for forecast
+  getCoordinates(response.data.coord);
 
   //Changing color background
   function changingBackground() {
@@ -139,13 +157,13 @@ function showSearchedCity(response) {
       descriptionText.style.backgroundColor = `#353D71`;
       descriptionWeather.style.color = `#FFFFFF`;
     } else if (colorDescription === `Fog`) {
-       document.body.style.backgroundAttachment = `fixed`;
-       document.body.style.background = `linear-gradient(#7F7FD5, #86A8E7, #91EAE4)`;
-       temperatureNumber.style.backgroundColor = `#65608B`;
-       cityColor.style.color = `#29346A`;
-       cityColor.style[`boxShadow`] = `18px -12px 0px #29346A`;
-       descriptionText.style.backgroundColor = `#353D71`;
-       descriptionWeather.style.color = `#FFFFFF`;
+      document.body.style.backgroundAttachment = `fixed`;
+      document.body.style.background = `linear-gradient(#7F7FD5, #86A8E7, #91EAE4)`;
+      temperatureNumber.style.backgroundColor = `#65608B`;
+      cityColor.style.color = `#29346A`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #29346A`;
+      descriptionText.style.backgroundColor = `#353D71`;
+      descriptionWeather.style.color = `#FFFFFF`;
     }
   }
 
@@ -161,11 +179,9 @@ function showSearchedCity(response) {
   let windKilometer = Math.round((windConvertion * 18) / 5);
   wind.innerHTML = `${windKilometer} km/h`;
 
-
   // Icon and condition (changing icon)
 
   let iconElement = document.querySelector(`#icon-weather`);
-  console.log(iconElement);
 
   // Clear
   if (description.textContent === `Clear`) {
