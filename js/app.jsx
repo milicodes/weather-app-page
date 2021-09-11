@@ -39,9 +39,46 @@ function getCoordinates(coordinates) {
   axios.get(apiCall).then(dailyForecast);
 }
 
+// Day forecast
+function showDayForecast(day) {
+  let date = day.dt;
+  let dateInfo = new Date(date * 1000);
+  console.log(dateInfo);
+  let dayNext = dateInfo.getDay();
+  console.log(dayNext); 
+}
+
 // Daily forecast
 function dailyForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+  forecast.forEach(showDayForecast);
+  let forecastOne = forecast[0].dt;
+  let forecastTwo = forecast[1].dt;
+  let forecastThree = forecast[2].dt;
+  let forecastFour = forecast[3].dt;
+  let forecastFive = forecast[4].dt;
+  let forecastSix = forecast[5].dt;
+
+  // Day 1
+  let nextDayForecast = document.querySelector(`#one`);
+  nextDayForecast.innerHTML = forecastOne;
+
+  // Day 2
+  let nextDayForecastTwo = document.querySelector(`#two`);
+  nextDayForecastTwo.innerHTML = forecastTwo;
+  // Day 3
+  let nextDayForecastThree = document.querySelector(`#three`);
+  nextDayForecastThree.innerHTML = forecastThree;
+  //Day 4
+  let nextDayForecastFour = document.querySelector(`#four`);
+  nextDayForecastFour.innerHTML = forecastFour;
+  //Day 5
+  let nextDayForecastFive = document.querySelector(`#five`);
+  nextDayForecastFive.innerHTML = forecastFive;
+
+  //Day 6
+  let nextDayForecastSix = document.querySelector(`#six`);
+  nextDayForecastSix.innerHTML = forecastSix;
 }
 
 // API response + Main temperature + details + City name
@@ -197,7 +234,7 @@ function showSearchedCity(response) {
     // Clouds
   } else if (description.textContent === `Clouds`) {
     iconElement.removeAttribute(`class`);
-    iconElement.setAttribute(`class`, `fas fa-cloud-sun icon-weather`);
+    iconElement.setAttribute(`class`, `fas fa-cloud icon-weather`);
   } else if (description.textContent === `Thunderstorm`) {
     iconElement.removeAttribute(`class`);
     iconElement.setAttribute(`class`, `fas fa-bolt icon-weather`);
@@ -254,6 +291,52 @@ function searchCity(event) {
 
   axios.get(`${apiUrl}`).then(showSearchedCity);
 }
+
+// Forecast HTML days
+let forecastHTML = document.querySelector(`#nextDayTemplate`);
+let forecastHTMLTemplate = `<div class="col-4">
+                  <div class="p-3 text-center next-days-edit color-monday">
+                    <h5 class="card-title"
+                    id="one">Mon</h5>
+                    <i class="fas fa-cloud-sun icon icon-days"></i>
+                    <p class="card-text">34&deg 25&deg</p>
+                  </div>
+                </div> <div class="col-4"> <div class="p-3 text-center next-days-edit color-monday">
+                    <h5 class="card-title"
+                    id="one">Mon</h5>
+                    <i class="fas fa-cloud-sun icon icon-days"></i>
+                    <p class="card-text">34&deg 25&deg</p>
+                  </div>
+                </div> <div class="col-4">
+                  <div class="p-3 text-center next-days-edit color-monday">
+                    <h5 class="card-title"
+                    id="one">Mon</h5>
+                    <i class="fas fa-cloud-sun icon icon-days"></i>
+                    <p class="card-text">34&deg 25&deg</p>
+                  </div> 
+                </div> <div class="col-4">
+                  <div class="p-3 text-center next-days-edit color-monday">
+                    <h5 class="card-title"
+                    id="one">Mon</h5>
+                    <i class="fas fa-cloud-sun icon icon-days"></i>
+                    <p class="card-text">34&deg 25&deg</p>
+                  </div>
+                </div> <div class="col-4"> <div class="p-3 text-center next-days-edit color-monday">
+                    <h5 class="card-title"
+                    id="one">Mon</h5>
+                    <i class="fas fa-cloud-sun icon icon-days"></i>
+                    <p class="card-text">34&deg 25&deg</p>
+                  </div>
+                </div> <div class="col-4">
+                  <div class="p-3 text-center next-days-edit color-monday">
+                    <h5 class="card-title"
+                    id="one">Mon</h5>
+                    <i class="fas fa-cloud-sun icon icon-days"></i>
+                    <p class="card-text">34&deg 25&deg</p>
+                  </div> 
+                </div>`;
+forecastHTML.innerHTML = forecastHTMLTemplate;
+
 
 // Calling function (search)
 let form = document.querySelector(`#user-input`);
