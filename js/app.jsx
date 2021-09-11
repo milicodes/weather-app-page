@@ -36,7 +36,7 @@ function getCoordinates(coordinates) {
   let apiKey = `62a816282d3b51b7451838a6b7b63934`;
   let apiCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
   console.log(apiCall);
-axios.get(apiCall).then(dailyForecast);
+  axios.get(apiCall).then(dailyForecast);
 }
 
 // Daily forecast
@@ -122,10 +122,10 @@ function showSearchedCity(response) {
       // Clear sky
     } else if (colorDescription === `Clear`) {
       document.body.style.backgroundAttachment = `fixed`;
-      document.body.style.background = `linear-gradient(#00c3ff,#ffff1c)`;
+      document.body.style.background = `linear-gradient(#00c3ff,#A2E96F)`;
       temperatureNumber.style.backgroundColor = `#8AD675`;
-      cityColor.style.color = `#78C442`;
-      cityColor.style[`boxShadow`] = `18px -12px 0px #8CC141`;
+      cityColor.style.color = `#8FD66F`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #8FD66F`;
       descriptionText.style.backgroundColor = `#E3FFBA`;
       descriptionWeather.style.color = `#4CCE84`;
       document.body.style.transition = `all 0.5s ease`;
