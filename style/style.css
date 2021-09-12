@@ -240,6 +240,10 @@ div.next-day-edit {
   max-width: 400px;
 }
 
+i.icon-days {
+  font-size: 50px;
+}
+
 p.five-days {
   position: relative;
   top: 18rem;
