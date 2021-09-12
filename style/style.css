@@ -5,31 +5,31 @@
 
 @media only screen and (min-width: 200px) {
   html {
-    zoom: 0.5;
+    zoom: 0.4;
   }
 }
 
 @media only screen and (min-width: 300px) {
   html {
-    zoom: 0.5;
+    zoom: 0.4;
   }
 }
 
 @media only screen and (min-width: 400px) {
   html {
-    zoom: 0.6;
+    zoom: 0.5;
   }
 }
 
 @media only screen and (min-width: 500px) {
   html {
-    zoom: 0.6;
+    zoom: 0.5;
   }
 }
 
 @media only screen and (min-width: 600px) {
   html {
-    zoom: 0.7;
+    zoom: 0.5;
   }
 }
 
