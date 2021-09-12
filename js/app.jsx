@@ -27,7 +27,6 @@ function formatDate(date) {
 
 let currentTime = new Date();
 formatDate(currentTime);
-console.log(new Date());
 
 // API response + Main temperature + details + City name
 
@@ -50,7 +49,6 @@ function showSearchedCity(response) {
   function changingBackground() {
     let description = document.querySelector(`#description-weather`);
     let iconWeather = document.querySelector(`#icon-weather`);
-    console.log(description.textContent);
     let colorDescription = description.textContent;
     let temperatureNumber = document.querySelector(`#temperature-grade`);
     let cityColor = document.querySelector(`#show-city`);
@@ -236,7 +234,6 @@ function searchCity(event) {
   }
 
   let apiUrl = `${mainLink}q=${cityName}&units=${units}&appid=${apiKey}`;
-  console.log(`${apiUrl}`);
 
   axios.get(`${apiUrl}`).then(showSearchedCity);
 }
@@ -326,7 +323,6 @@ function getCoordinates(coordinates) {
   let longitude = coordinates.lon;
   let apiKey = `62a816282d3b51b7451838a6b7b63934`;
   let apiCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-  console.log(apiCall);
   axios.get(apiCall).then(dailyForecast);
 }
 
@@ -386,7 +382,6 @@ function searchFahrenheit(event) {
   let units = `imperial`;
 
   let apiUrl = `${mainLink}q=${citySearched}&units=${units}&appid=${apiKey}`;
-  console.log(`${apiUrl}`);
 
   axios.get(`${apiUrl}`).then(showSearchedFahrenheit);
 }
@@ -402,7 +397,6 @@ function searchCelcius(event) {
   let units = `metric`;
 
   let apiUrl = `${mainLink}q=${citySearched}&units=${units}&appid=${apiKey}`;
-  console.log(`${apiUrl}`);
 
   axios.get(`${apiUrl}`).then(showSearchedCelcius);
 }
