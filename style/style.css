@@ -125,13 +125,25 @@ div.today-date {
   background-color: none;
 }
 
-div.color-rain {
+div.color-clear {
+  background: rgb(255, 252, 3, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
   color: #faffff;
-  background-color: #f2653e;
+}
+div.color-cloud {
+  background: rgb(130, 235, 174, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  color: #faffff;
 }
 
-div.color-cloud {
-  background: rgba(7, 197, 249, 0.5);
+div.color-rain {
+  background: rgb(30, 213, 253, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);

@@ -29,15 +29,6 @@ let currentTime = new Date();
 formatDate(currentTime);
 console.log(new Date());
 
-// Day forecast
-function showDayForecast(day) {
-  let date = day.dt;
-  let dateInfo = new Date(date * 1000);
-  console.log(dateInfo);
-  let dayNext = dateInfo.getDay();
-  console.log(dayNext);
-}
-
 // API response + Main temperature + details + City name
 
 function showSearchedCity(response) {
@@ -126,13 +117,12 @@ function showSearchedCity(response) {
       // Haze and Smoke / Mist
     } else if (colorDescription === `Haze`) {
       document.body.style.backgroundAttachment = `fixed`;
-      document.body.style.background = `linear-gradient(#f46b45, #eea849)`;
-      temperatureNumber.style.backgroundColor = `#E89A40`;
-      cityColor.style.color = `#F0AF5C`;
-      cityColor.style[`boxShadow`] = `18px -12px 0px #F0AF5C`;
-      descriptionText.style.backgroundColor = `#FCDBB0`;
-      descriptionWeather.style.color = `#F47146`;
-      document.body.style.transition = `all 0.5s ease-in-out`;
+      document.body.style.background = `linear-gradient(#7F7FD5, #86A8E7, #91EAE4)`;
+      temperatureNumber.style.backgroundColor = `#65608B`;
+      cityColor.style.color = `#29346A`;
+      cityColor.style[`boxShadow`] = `18px -12px 0px #29346A`;
+      descriptionText.style.backgroundColor = `#353D71`;
+      descriptionWeather.style.color = `#FFFFFF`;
     } else if (colorDescription === `Smoke`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#7F7FD5, #86A8E7, #91EAE4)`;
@@ -141,7 +131,6 @@ function showSearchedCity(response) {
       cityColor.style[`boxShadow`] = `18px -12px 0px #29346A`;
       descriptionText.style.backgroundColor = `#353D71`;
       descriptionWeather.style.color = `#FFFFFF`;
-      document.body.style.transition = `all 0.5s ease`;
     } else if (colorDescription === `Mist`) {
       document.body.style.backgroundAttachment = `fixed`;
       document.body.style.background = `linear-gradient(#7F7FD5, #86A8E7, #91EAE4)`;
@@ -213,7 +202,7 @@ function showSearchedCity(response) {
   } else if (description.textContent === `Fog`) {
     iconElement.removeAttribute(`class`);
     iconElement.setAttribute(`class`, `fas fa-smog icon-weather`);
-  } 
+  }
   // let iconElement = response.data.weather[0].icon;
   // let iconURL = document.querySelector(`#icon-weather`);
   // iconURL.setAttribute(
@@ -252,12 +241,17 @@ function searchCity(event) {
   axios.get(`${apiUrl}`).then(showSearchedCity);
 }
 
-// Icon
+// Day forecast
+function showDayForecast(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let weekDay = [`MON`, `TUE`, `WED`, `THU`, `FRI`, `SAT`, `SUN`]
+  return weekDay[day];
+}
 
 // Daily forecast
 function dailyForecast(response) {
   let forecast = response.data.daily;
-  console.log(forecast);
 
   // Forecast HTML days
 
@@ -268,19 +262,21 @@ function dailyForecast(response) {
   forecast.forEach(function (forecastDay) {
     // Icon selection and condition
     let addingElement = `fa-cloud-sun icon`;
-    // Background Forecast condition 
+    // Background Forecast condition
     let colorSelection = `color-rain`;
     // Selecting description as condition
     let iconForecast = forecastDay.weather[0].main;
     if (iconForecast === `Rain`) {
       addingElement = `fa-cloud-showers-heavy`;
-      colorSelection = `color-cloud`
+      colorSelection = `color-rain`;
     } else if (iconForecast === `Clouds`) {
       addingElement = `fa-cloud`;
+       colorSelection = `color-cloud`;
     } else if (iconForecast === `Drizzle`) {
       addingElement = `fa-cloud-rain`;
     } else if (iconForecast === `Clear`) {
       addingElement = `fa-sun`;
+      colorSelection = `color-clear`;
     } else if (iconForecast === `Fog`) {
       addingElement = `fa-smog`;
     } else if (iconForecast === `Smoke`) {
@@ -301,7 +297,7 @@ function dailyForecast(response) {
       `<div class="col-4">
                   <div class="p-3 text-center next-days-edit ${colorSelection}">
                     <h5 class="card-title"
-                    id="one">${forecastDay.dt}</h5>
+                    id="one">${showDayForecast(forecastDay.dt)}</h5>
                     <i class="fas ${addingElement} icon icon-days" id="iconNext"></i>
                     <p class="card-text" id="max">${Math.round(
                       forecastDay.temp.max
