@@ -245,7 +245,7 @@ function searchCity(event) {
 function showDayForecast(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let weekDay = [`MON`, `TUE`, `WED`, `THU`, `FRI`, `SAT`, `SUN`]
+  let weekDay = [`MON`, `TUE`, `WED`, `THU`, `FRI`, `SAT`, `SUN`];
   return weekDay[day];
 }
 
@@ -259,51 +259,53 @@ function dailyForecast(response) {
   // Adding row through JS
   let forecastRow = `<div class="row text-center g-2">`;
   // Adding loop of day
-  forecast.forEach(function (forecastDay) {
-    // Icon selection and condition
-    let addingElement = `fa-cloud-sun icon`;
-    // Background Forecast condition
-    let colorSelection = `color-rain`;
-    // Selecting description as condition
-    let iconForecast = forecastDay.weather[0].main;
-    if (iconForecast === `Rain`) {
-      addingElement = `fa-cloud-showers-heavy`;
-      colorSelection = `color-rain`;
-    } else if (iconForecast === `Clouds`) {
-      addingElement = `fa-cloud`;
-       colorSelection = `color-cloud`;
-    } else if (iconForecast === `Drizzle`) {
-      addingElement = `fa-cloud-rain`;
-    } else if (iconForecast === `Clear`) {
-      addingElement = `fa-sun`;
-      colorSelection = `color-clear`;
-    } else if (iconForecast === `Fog`) {
-      addingElement = `fa-smog`;
-    } else if (iconForecast === `Smoke`) {
-      addingElement = `fa-smog`;
-    } else if (iconForecast === `Mist`) {
-      addingElement = `fa-smog`;
-    } else if (iconForecast === `Snow`) {
-      addingElement = `fa-snoflake`;
-    } else if (iconForecast === `Haze`) {
-      addingElement = `fa-smog`;
-    } else if (iconForecast === `Thunderstorm`) {
-      addingElement = `fa-bolt`;
-    }
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      // Icon selection and condition
+      let addingElement = `fa-cloud-sun icon`;
+      // Background Forecast condition
+      let colorSelection = `color-rain`;
+      // Selecting description as condition
+      let iconForecast = forecastDay.weather[0].main;
+      if (iconForecast === `Rain`) {
+        addingElement = `fa-cloud-showers-heavy`;
+        colorSelection = `color-rain`;
+      } else if (iconForecast === `Clouds`) {
+        addingElement = `fa-cloud`;
+        colorSelection = `color-cloud`;
+      } else if (iconForecast === `Drizzle`) {
+        addingElement = `fa-cloud-rain`;
+      } else if (iconForecast === `Clear`) {
+        addingElement = `fa-sun`;
+        colorSelection = `color-clear`;
+      } else if (iconForecast === `Fog`) {
+        addingElement = `fa-smog`;
+      } else if (iconForecast === `Smoke`) {
+        addingElement = `fa-smog`;
+      } else if (iconForecast === `Mist`) {
+        addingElement = `fa-smog`;
+      } else if (iconForecast === `Snow`) {
+        addingElement = `fa-snoflake`;
+      } else if (iconForecast === `Haze`) {
+        addingElement = `fa-smog`;
+      } else if (iconForecast === `Thunderstorm`) {
+        addingElement = `fa-bolt`;
+      }
 
-    // Container of forecast days in loop
-    forecastRow =
-      forecastRow +
-      `<div class="col-4">
+      // Container of forecast days in loop
+      forecastRow =
+        forecastRow +
+        `<div class="col-4">
                   <div class="p-3 text-center next-days-edit ${colorSelection}">
                     <h5 class="card-title"
                     id="one">${showDayForecast(forecastDay.dt)}</h5>
                     <i class="fas ${addingElement} icon icon-days" id="iconNext"></i>
-                    <p class="card-text" id="max">${Math.round(
+                    <p class="card-text" id="max"><strong>${Math.round(
                       forecastDay.temp.max
-                    )}&deg ${Math.round(forecastDay.temp.min)}&deg</p>
+                    )}</strong>&deg ${Math.round(forecastDay.temp.min)}&deg</p>
                   </div>
                 </div>`;
+    }
   });
   // Closing row
   forecastRow = forecastRow + `</div>`;
