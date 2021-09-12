@@ -1,6 +1,52 @@
+* {
+  border: 1px solid transparent;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 300px) {
+  html {
+    zoom: 0.5;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  html {
+    zoom: 0.6;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  html {
+    zoom: 0.6;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  html {
+    zoom: 0.7;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  html {
+    zoom: 0.9;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  html {
+    zoom: 1;
+  }
+}
+
 html {
   height: max-content;
   margin: 0 auto;
+}
+
+div.user-input {
+  max-width: max-content;
+  zoom: 100%;
 }
 
 div.input-group {
@@ -22,7 +68,6 @@ a {
 
 body {
   height: 100%;
-  background-size: cover;
   background-repeat: no-repeat;
   background: #00d2ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -35,10 +80,14 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin-top: 0px;
   margin-left: 0px;
-  margin-bottom: 50rem;
+  margin-bottom: 10rem;
   padding: 0;
   background-attachment: fixed;
   zoom: 60%;
+}
+
+div.user-input {
+  width: max-content;
 }
 
 div.row-margin {
@@ -86,7 +135,7 @@ div.move-content-up {
 
 div.move-city-up {
   position: relative;
-  margin-top: 10rem;
+  margin-top: 6rem;
 }
 
 h1.tittle-city {
@@ -169,14 +218,13 @@ h4.description {
   color: #a4d4ff;
   padding: 1rem;
   text-transform: capitalize;
-  word-wrap: break-word;
 }
 
 div.description-text {
   border-radius: 20px;
   background-color: #1474cf;
-  margin-left: 4rem;
   padding: 0.5rem;
+  width: max-content;
 }
 
 h1.temperature-number {
@@ -185,7 +233,7 @@ h1.temperature-number {
   background-color: #65aaec;
   border-radius: 20px;
   font-family: "Open Sans", sans-serif;
-  max-width: 30rem;
+  max-width: 50rem;
   text-align: center;
 }
 
@@ -208,6 +256,7 @@ h5.day {
 
 div.next-days-edit {
   border-radius: 10px;
+  width: max-content;
   transition: 0.4s ease-in-out transform, 0.4s ease-in-out;
 }
 div.next-days-edit:hover {
@@ -252,8 +301,8 @@ p.temp {
 
 div.position-next-days {
   position: relative;
-  width: 29rem;
-  margin-top: 4rem;
+  width: 30rem;
+  margin-top: 1rem;
   transform: rotateX(57deg) rotateZ(56deg);
   transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow;
 }
@@ -302,6 +351,10 @@ div.main-temperature {
   top: 2rem;
   width: 15rem;
   transform: rotateX(20deg) rotateY(-45deg);
+}
+
+div.container-two {
+  max-width: 1000px;
 }
 
 div.date {
