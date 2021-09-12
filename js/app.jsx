@@ -274,22 +274,29 @@ function dailyForecast(response) {
         addingElement = `fa-cloud`;
         colorSelection = `color-cloud`;
       } else if (iconForecast === `Drizzle`) {
+        colorSelection = `color-other`;
         addingElement = `fa-cloud-rain`;
       } else if (iconForecast === `Clear`) {
         addingElement = `fa-sun`;
         colorSelection = `color-clear`;
       } else if (iconForecast === `Fog`) {
         addingElement = `fa-smog`;
+        colorSelection = `color-other`;
       } else if (iconForecast === `Smoke`) {
         addingElement = `fa-smog`;
+        colorSelection = `color-other`;
       } else if (iconForecast === `Mist`) {
         addingElement = `fa-smog`;
+        colorSelection = `color-other`;
       } else if (iconForecast === `Snow`) {
         addingElement = `fa-snoflake`;
+        colorSelection = `color-other`;
       } else if (iconForecast === `Haze`) {
         addingElement = `fa-smog`;
+        colorSelection = `color-other`;
       } else if (iconForecast === `Thunderstorm`) {
         addingElement = `fa-bolt`;
+        colorSelection = `color-rain`;
       }
 
       // Container of forecast days in loop

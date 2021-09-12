@@ -35,7 +35,7 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin-top: 0px;
   margin-left: 0px;
-  margin-bottom: 10rem;
+  margin-bottom: 50rem;
   padding: 0;
   background-attachment: fixed;
   zoom: 60%;
@@ -144,6 +144,15 @@ div.color-cloud {
 
 div.color-rain {
   background: rgb(30, 213, 253, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  color: #faffff;
+}
+
+div.color-other {
+  background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
