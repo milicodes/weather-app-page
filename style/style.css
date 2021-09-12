@@ -7,18 +7,11 @@
   html {
     zoom: 0.4;
   }
-
-  div.move-content-up {
-    zoom: 0.7;
-  }
 }
 
 @media only screen and (min-width: 300px) {
   html {
     zoom: 0.5;
-  }
-   div.move-content-up {
-    zoom: 0.7;
   }
 }
 
@@ -26,25 +19,16 @@
   html {
     zoom: 0.6;
   }
-   div.move-content-up {
-    zoom: 0.7;
-  }
 }
 
 @media only screen and (min-width: 500px) {
   html {
     zoom: 0.6;
   }
-   div.move-content-up {
-    zoom: 0.7;
-  }
 }
 
 @media only screen and (min-width: 600px) {
   html {
-    zoom: 0.7;
-  }
-   div.move-content-up {
     zoom: 0.7;
   }
 }
@@ -53,17 +37,11 @@
   html {
     zoom: 0.9;
   }
-   div.move-content-up {
-    zoom: 0.7;
-  }
 }
 
 @media only screen and (min-width: 1000px) {
   html {
     zoom: 1;
-  }
-   div.move-content-up {
-    zoom: 0.7;
   }
 }
 
