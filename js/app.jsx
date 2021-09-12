@@ -38,22 +38,6 @@ function showDayForecast(day) {
   console.log(dayNext);
 }
 
-// Daily forecast
-function dailyForecast(response) {
-  let forecast = response.data.daily;
-  console.log(forecast);
-}
-
-// Coordinates for forecast
-function getCoordinates(coordinates) {
-  let latitude = coordinates.lat;
-  let longitude = coordinates.lon;
-  let apiKey = `62a816282d3b51b7451838a6b7b63934`;
-  let apiCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-  console.log(apiCall);
-  axios.get(apiCall).then(dailyForecast);
-}
-
 // API response + Main temperature + details + City name
 
 function showSearchedCity(response) {
@@ -265,26 +249,49 @@ function searchCity(event) {
   axios.get(`${apiUrl}`).then(showSearchedCity);
 }
 
-// Forecast HTML days
+// Daily forecast
+function dailyForecast(response) {
+  let forecast = response.data.daily;
+  console.log(forecast);
 
-let forecastHTML = document.querySelector(`#nextDayTemplate`);
+  // Forecast HTML days
 
-let forecastRow = `<div class="row text-center g-2">`;
-let daysTemplate = [`Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`];
-daysTemplate.forEach(function (day) {
-  forecastRow =
-    forecastRow +
-    `<div class="col-4">
+  let forecastHTML = document.querySelector(`#nextDayTemplate`);
+  // Adding row through JS
+  let forecastRow = `<div class="row text-center g-2">`;
+  // Adding loop of day
+  forecast.forEach(function (forecastDay) {
+    // Container of forecast days in loop
+    forecastRow =
+      forecastRow +
+      `<div class="col-4">
                   <div class="p-3 text-center next-days-edit color-monday">
                     <h5 class="card-title"
-                    id="one">${day}</h5>
+                    id="one">${forecastDay.dt}</h5>
                     <i class="fas fa-cloud-sun icon icon-days"></i>
-                    <p class="card-text">34&deg 25&deg</p>
+                    <p class="card-text">${Math.round(
+                      forecastDay.temp.max
+                    )}&deg ${Math.round(forecastDay.temp.min)}&deg</p>
                   </div>
                 </div>`;
-});
-forecastRow = forecastRow + `</div>`;
-forecastHTML.innerHTML = forecastRow;
+  });
+  // Closing row
+  forecastRow = forecastRow + `</div>`;
+  // Adding into HTML 6 times
+  forecastHTML.innerHTML = forecastRow;
+
+  // Icon condition
+}
+
+// Coordinates for forecast
+function getCoordinates(coordinates) {
+  let latitude = coordinates.lat;
+  let longitude = coordinates.lon;
+  let apiKey = `62a816282d3b51b7451838a6b7b63934`;
+  let apiCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+  console.log(apiCall);
+  axios.get(apiCall).then(dailyForecast);
+}
 
 // Calling function (search)
 let form = document.querySelector(`#user-input`);
