@@ -3,6 +3,12 @@
   margin-bottom: 0;
 }
 
+@media only screen and (min-width: 200px) {
+  html {
+    zoom: 0.5;
+  }
+}
+
 @media only screen and (min-width: 300px) {
   html {
     zoom: 0.5;
