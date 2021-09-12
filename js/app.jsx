@@ -210,7 +210,10 @@ function showSearchedCity(response) {
   } else if (description.textContent === `Snow`) {
     iconElement.removeAttribute(`class`);
     iconElement.setAttribute(`class`, `fas fa-snowflake icon-weather`);
-  }
+  } else if (description.textContent === `Fog`) {
+    iconElement.removeAttribute(`class`);
+    iconElement.setAttribute(`class`, `fas fa-smog icon-weather`);
+  } 
   // let iconElement = response.data.weather[0].icon;
   // let iconURL = document.querySelector(`#icon-weather`);
   // iconURL.setAttribute(
@@ -249,6 +252,8 @@ function searchCity(event) {
   axios.get(`${apiUrl}`).then(showSearchedCity);
 }
 
+// Icon
+
 // Daily forecast
 function dailyForecast(response) {
   let forecast = response.data.daily;
@@ -261,15 +266,44 @@ function dailyForecast(response) {
   let forecastRow = `<div class="row text-center g-2">`;
   // Adding loop of day
   forecast.forEach(function (forecastDay) {
+    // Icon selection and condition
+    let addingElement = `fa-cloud-sun icon`;
+    // Background Forecast condition 
+    let colorSelection = `color-rain`;
+    // Selecting description as condition
+    let iconForecast = forecastDay.weather[0].main;
+    if (iconForecast === `Rain`) {
+      addingElement = `fa-cloud-showers-heavy`;
+      colorSelection = `color-cloud`
+    } else if (iconForecast === `Clouds`) {
+      addingElement = `fa-cloud`;
+    } else if (iconForecast === `Drizzle`) {
+      addingElement = `fa-cloud-rain`;
+    } else if (iconForecast === `Clear`) {
+      addingElement = `fa-sun`;
+    } else if (iconForecast === `Fog`) {
+      addingElement = `fa-smog`;
+    } else if (iconForecast === `Smoke`) {
+      addingElement = `fa-smog`;
+    } else if (iconForecast === `Mist`) {
+      addingElement = `fa-smog`;
+    } else if (iconForecast === `Snow`) {
+      addingElement = `fa-snoflake`;
+    } else if (iconForecast === `Haze`) {
+      addingElement = `fa-smog`;
+    } else if (iconForecast === `Thunderstorm`) {
+      addingElement = `fa-bolt`;
+    }
+
     // Container of forecast days in loop
     forecastRow =
       forecastRow +
       `<div class="col-4">
-                  <div class="p-3 text-center next-days-edit color-monday">
+                  <div class="p-3 text-center next-days-edit ${colorSelection}">
                     <h5 class="card-title"
                     id="one">${forecastDay.dt}</h5>
-                    <i class="fas fa-cloud-sun icon icon-days"></i>
-                    <p class="card-text">${Math.round(
+                    <i class="fas ${addingElement} icon icon-days" id="iconNext"></i>
+                    <p class="card-text" id="max">${Math.round(
                       forecastDay.temp.max
                     )}&deg ${Math.round(forecastDay.temp.min)}&deg</p>
                   </div>
@@ -279,8 +313,6 @@ function dailyForecast(response) {
   forecastRow = forecastRow + `</div>`;
   // Adding into HTML 6 times
   forecastHTML.innerHTML = forecastRow;
-
-  // Icon condition
 }
 
 // Coordinates for forecast

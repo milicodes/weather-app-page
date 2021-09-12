@@ -125,6 +125,20 @@ div.today-date {
   background-color: none;
 }
 
+div.color-rain {
+  color: #faffff;
+  background-color: #f2653e;
+}
+
+div.color-cloud {
+  background: rgba(7, 197, 249, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  color: #faffff;
+}
+
 div.moving-main-icon {
   position: relative;
 }
@@ -173,12 +187,12 @@ h5.day {
 
 div.next-days-edit {
   border-radius: 10px;
-  transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow;
+  transition: 0.4s ease-in-out transform, 0.4s ease-in-out;
 }
 div.next-days-edit:hover {
   transform: translate3d(0px, -16px, 0px);
   box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
-    54px 54px 28px -10px rgba(34, 33, 81, 0.15);
+    54px 54px 28px -10px rgba(43, 42, 65, 0.1);
 }
 
 div.color-monday {
@@ -220,8 +234,6 @@ div.position-next-days {
   width: 29rem;
   margin-top: 4rem;
   transform: rotateX(57deg) rotateZ(56deg);
-  box-shadow: -1px 0 28px 0 rgba(34, 33, 81, 0.01),
-    28px 28px 28px 0 rgba(34, 33, 81, 0.25);
   transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow;
 }
 
