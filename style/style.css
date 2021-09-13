@@ -5,13 +5,13 @@
 
 @media only screen and (min-width: 200px) {
   html {
-    zoom: 0.4;
+    zoom: 0.5;
   }
 }
 
 @media only screen and (min-width: 300px) {
   html {
-    zoom: 0.5;
+    zoom: 0.6;
   }
 }
 
@@ -142,6 +142,11 @@ div.move-content-up {
 div.move-city-up {
   position: relative;
   margin-top: 6rem;
+}
+
+div.move-city-right {
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 h1.tittle-city {
