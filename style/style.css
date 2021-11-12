@@ -319,7 +319,7 @@ div.position-next-days {
 }
 
 div.rotate-text {
-  transform: rotateX(20deg) rotateY(21deg);
+  transform: rotateX(10deg) rotateY(21deg);
   position: relative;
   top: 1rem;
 }
